@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable 
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
@@ -46,8 +46,8 @@ class User extends Authenticatable implements FilamentUser
     ];
 
     // so we ban anyone from accessing it
-    public function canAccessFilament(): bool
-    {
-        return $this->hasRole(['admin', 'writer', 'moderator']);
-    }
+    // public function canAccessFilament(): bool
+    // {
+    //     return $this->hasRole(['admin', 'writer', 'moderator', 'test']);
+    // }
 }
